@@ -7,7 +7,11 @@ export default function() {
 
   const handleOnSubmit = async e => {
     e.preventDefault();
-    login(loginData);
+    try {
+      await login(loginData);
+    } catch (ex) {
+      console.log(ex);
+    }
   };
 
   const handleOnChange = e => {
